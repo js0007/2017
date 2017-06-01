@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+		
+	#code:before{
+    background: url(img\\girl2.jpg) ;
+    background-size: cover;
+    width: 35%;
+    height: 100%;
+    content: "";
+	left: 60px;
+    position: absolute;
+    z-index: -1;/*-1 可以当背景*/
+    filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;z-index: -1;
+}
+
+	#loveHeart:before{
+    background: url(img\\girl1.jpg) ;
+    background-size: cover;
+    width: 35%;
+    height: 100%;
+    content: "";
+	right: 20px;
+    position: absolute;
+    z-index: -1;/*-1 可以当背景*/
+    filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;z-index: -1;
+}
+
+	</style>
+   	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<link rel="stylesheet" href="css/default.css" type="text/css" >
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/screenfull.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/soundmanager2-nodebug-jsmin.js"></script>
+
+</head>
+
+<body>
+	<div class="centered" id="loading"> <h1>姑娘,请稍等...</h1></div>
+	<button id="start_btn" class="btn btn-primary btn-large centered" style="text-align:center;" >敏,点它,点它~</button>
+
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 亲爱的, 因为你不太熟悉编程,</span><br />
+				<span class="space"/><span class="comments">* 我将写伪代码来庆祝我们一起走过的点点滴滴,</span><br />
+				<span class="space"/><span class="comments">* 打算耍点小心思,逗你开心。你知道的，我一向这么屌丝，嘿嘿...</span><br/>
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="string">"血脚印子"</span>;<br />
+				Girl u = <span class="string">"糖豆"</span>;<br />
+				<br />
+				<span class="comments">// 我们第一次见面是在高一。 </span><br />
+				Met(u, i);<br />
+				<span class="comments">// 我们前后位,我们总是因为上课偷偷说话而被老师怼。</span><br />
+				WhisperingWords(u,i);<br />
+				<span class="comments">// 你知道吗,你下课吃零食的调皮,我多么心跳。</span><br />
+				if(u.Nifty()) Heartbeat(i);<br />
+				<span class="comments">// 你知道吗,华老师问我是不是和你谈恋爱了,我回答的何其理直气壮,ha ha。</span><br />
+				Love(u,i);<br />
+				<span class="comments">// 你知道吗,我那时候竟然还写过一首诗,为你写的。语文老师说我抄的,崇说老师夸你呢。我觉得我的姑娘就是一首诗。</span><br />
+				i.WritePoemsForGirl(u);<br />
+				<span class="comments">//这些年我习惯了想你,坚持并心怀希望。</span><br />
+				i in <span class="keyword">loop</span> {<br />
+				<span class="placeholder"/>	i.Waiting(u);<br />
+				} <br />
+				<span class="comments">//豪杰的婚礼,我们再次重逢,感谢这个小兔崽子，haha。</span><br />
+				Love(u, i) = <span class="keyword">true</span> && Relationship(u, i) = <span class="keyword">true</span>;<br />
+				<span class="comments">//2017我很幸福,因为我与你一起。</span><br />
+				<span class="comments">//未来我们也会很幸福,因为与你一起,未来可期。</span><br />
+				Happiness(u, i) && Together(u, i)  ==> FutureAndWish(u, i);<br/>
+				<span class="comments">//姑娘,把手给我,跟我走两步,民政局马上到了...</span><br />
+				us = u + i;<br />
+				<span class="keyword">while</span>(<span class="keyword">forever true</span>){<br />
+				<span class="placeholder"/>	Together(us) = <span class="string">"Grow old along with me! The best is yet to be." </span>;<br />
+				}<br />
+
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Min, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						You are my habit.<br/>
+						<div class="signature">- JuShuai</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="copyright">
+			谨以此网页,献给我的女神.....经,让这个眼睛都会笑的女孩继续美下去,love you...
+			<br />
+			感谢hackzhou,biaobiaoqi两位前辈在github开源的代码。
+			<!-- Inspired by <a href='https://github.com/hackerzhou/Love'>hackerzhou's love project</a>.<br> -->
+			<!-- Copyleft  <a href='http://biaobiaoqi.me'>biaobiaoqi.me</a>  -->
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		var MUSIC;
+		var start_btn = document.getElementById('start_btn');
+		var loading_hint = document.getElementById('loading');
+		var code = document.getElementById("code"); 
+		
+		//hide code and start_btn
+		code.style.display ="none"; 
+		start_btn.style.display = "none";
+
+		soundManager.setup({
+		        url: 'music/',
+		        onready: initMP3
+	    });
+
+		function initMP3() {
+	        MUSIC = soundManager.createSound({
+	            id: 'bgmusic',
+	           	url: 'http://biaobiaoqi.u.qiniudn.com/lovexiaojiuwocut.mp3',
+	           	loops: 1000,
+		        onload: function() {
+		            setTimeout(function() {
+		            	//background music loading completed
+						loading_hint.style.display = "none";
+						start_btn.style.display = "";
+
+		            }, 3000);
+		        }
+
+	        });
+	        MUSIC.load();
+	    }
+
+
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+
+		document.getElementById("start_btn").onclick = function () {
+            //music
+
+            MUSIC.play();
+            
+            //show code
+        	var id = document.getElementById("code"); 
+			id.style.display =""; 
+
+			//full screen
+			//screenfull && screenfull.request();
+
+            //hide button
+            document.getElementById("start_btn").style.display = "none";
+
+			//start animation
+
+			var together = new Date();
+			together.setFullYear(2010, 10, 25);
+			together.setHours(8);
+			together.setMinutes(0);
+			together.setSeconds(0);
+			together.setMilliseconds(0);
+			
+			if (!document.createElement('canvas').getContext) {
+				var msg = document.createElement("div");
+				msg.id = "errorMsg";
+				msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+				document.body.appendChild(msg);
+				$("#code").css("display", "none")
+				$("#copyright").css("position", "absolute");
+				$("#copyright").css("bottom", "10px");
+			    document.execCommand("stop");
+			} else {
+				startHeartAnimation();
+
+				setTimeout(function () {
+					startHeartAnimation();
+				}, 5000);
+
+				timeElapse(together);
+				setInterval(function () {
+					timeElapse(together);
+				}, 500);
+
+				adjustCodePosition();
+				$("#code").typewriter();
+			}
+        }
+	</script>
+</body>
+</html>
